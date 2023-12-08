@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Produtos Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+            padding: 1rem;
+        }
+        .product {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Início</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
+        <a href="#">Serviços</a>
+    </div>
+    <h1>Loja de Produtos Pet</h1>
+    <div class="products" id="products">
+    </div>
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: 'Banho',
+                description: 'Um banho premium completo e shampoo truss profissionel com escova inclusa, bem gostoso para seu cachorro',
+                image: 'banho.jpg'
+            },
+            {
+                id: 2,
+                name: 'Tosa',
+                description: 'Uma barber profissional especializado em dogs para seu pet sair sempre na REGUA ',
+                image: 'tosa.jpg'
+            },
+            {
+                id: 3,
+                name: 'Vacinação',
+                description: 'Enfermeiros e veterinarios e medicos com PHDs prontos, preparados e querendo furar seu com a mais alta eficacia o seu pet ',
+                image: 'vacina.jpg'
+            }
+        ];
+
+        const productsContainer = document.getElementById('products');
+
+        products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product';
+
+            const productImage = document.createElement('img');
+            productImage.src = product.image;
+            productImage.alt = product.name;
+
+            const productName = document.createElement('h2');
+            productName.textContent = product.name;
+
+            const productDescription = document.createElement('p');
+            productDescription.textContent = product.description;
+
+            productDiv.appendChild(productImage);
+            productDiv.appendChild(productName);
+            productDiv.appendChild(productDescription);
+
+            productsContainer.appendChild(productDiv);
+        });
+    </script>
+</body>
+</html>
