@@ -1,4 +1,4 @@
 # Repcurso
 Software about petz
 
-Integrantes: Enzo Sodre, Felipe de Macedo, Kaio Oliveira.
+Integrantes: Enzo Sodré, Felipe de Macedo, Kaio Oliveira.
